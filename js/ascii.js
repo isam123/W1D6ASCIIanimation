@@ -58,16 +58,20 @@ const onStart = (e) =>{
    
 
     const setTimeInterval = (e) => {
-
+            clearInterval(Interval);
+        
         if(ExerAnim!=undefined) {
-                var timing = 0;
         let newAnimInt = document.getElementById("turbo").checked;
         console.log(newAnimInt)
         if(newAnimInt!==true) 
         {
-            animVal+=200; clearInterval(Interval);setInterval(animInterval,animVal);
+            animVal=250;
+            Interval=setInterval(animInterval,animVal) ;
          }
-        else {console.log("sdf"); animVal-=200; clearInterval(Interval) ; setInterval(animInterval,animVal) ;}
+        else {
+            animVal=50;
+            Interval=setInterval(animInterval,animVal) ;
+            ;}
         }
         
     }
